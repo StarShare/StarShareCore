@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description  = <<-EOS
   StarShareCore abstracts network commands using Swift Generics to provide developers
   with more compile-time confidence.
-  ReactiveSwift and RxSwift extensions exist as well. Instructions for installation
+  ReactiveSwift extensions exist as well. Instructions for installation
   are in [the README](http://git.idoool.com/iOS_modul/StarShareCore).
   EOS
   s.homepage     = "http://git.idoool.com/iOS_modul/StarShareCore"
