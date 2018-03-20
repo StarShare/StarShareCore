@@ -2,7 +2,6 @@ platform :ios, '9.0'
 
 target 'StarShareCore' do
   use_frameworks!
-
   pod 'Alamofire'
   pod 'Moya'
   pod 'SwiftyJSON'
