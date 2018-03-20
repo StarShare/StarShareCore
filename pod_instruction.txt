@@ -1,0 +1,14 @@
+#获取StarShareCore私有库
+pod repo add StarShareCore http://git.idoool.com/iOS_modul/StarShareCore.git
+
+#创建podspec文件
+pod spec create StarShareCore.podspec
+
+#本地验证
+pod lib lint --sources='https://github.com/CocoaPods/Specs.git' --verbose --use-libraries --allow-warnings
+
+#服务器验证
+pod spec lint --sources='https://github.com/CocoaPods/Specs.git' --verbose --use-libraries --allow-warnings
+
+#发布私有库 
+pod repo push StarShareCore StarShareCore.podspec  --sources='https://github.com/CocoaPods/Specs.git' --verbose  --use-libraries --allow-warnings

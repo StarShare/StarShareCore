@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://oye.moe"
   s.ios.deployment_target = '9.0'
   s.source       = { :git => "http://git.idoool.com/iOS_modul/StarShareCore.git", :tag => s.version }
-  s.source_files  = "StarShareCore/**/*.swift"
+  s.source_files  = "StarShareCore/StarShareCore/**/*.swift"
   s.pod_target_xcconfig = {
     'SWIFT_VERSION' => '4.0'
   }
