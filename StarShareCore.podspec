@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "StarShareCore"
-  s.version      = "0.0.3"
+  s.version      = "0.0.1"
   s.summary      = "Network abstraction layer written in Swift with Moya"
   s.description  = <<-EOS
   StarShareCore abstracts network commands using Swift Generics to provide developers
@@ -14,7 +14,10 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://oye.moe"
   s.ios.deployment_target = '9.0'
   s.source       = { :git => "https://github.com/StarShare/StarShareCore.git", :tag => s.version }
-  s.source_files  = "StarShareCore/"
+  s.source_files  = "StarShareCore/**/*.swift"
+  s.pod_target_xcconfig = {
+    'SWIFT_VERSION' => '4.0'
+  }
   s.dependency "Alamofire"
   s.dependency "Moya"
   s.dependency "SwiftyJSON"
