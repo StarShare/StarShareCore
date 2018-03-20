@@ -23,4 +23,5 @@ Pod::Spec.new do |s|
   s.dependency "Cache"
   s.dependency "SwifterSwift"
   s.framework  = "Foundation"
+  s.framework  = "UIKit"
 end
