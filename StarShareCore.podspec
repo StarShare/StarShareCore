@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "StarShareCore"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Network abstraction layer written in Swift with Moya"
   s.description  = <<-EOS
   StarShareCore abstracts network commands using Swift Generics to provide developers
@@ -22,6 +22,5 @@ Pod::Spec.new do |s|
   s.dependency "ReactiveCocoa"
   s.dependency "Cache"
   s.dependency "SwifterSwift"
-  s.framework  = "Foundation"
-  s.framework  = "UIKit"
+  s.framework  = "Foundation","UIKit"
 end
