@@ -1,0 +1,6 @@
+framework module Pods_StarShareCore {
+  umbrella header "Pods-StarShareCore-umbrella.h"
+
+  export *
+  module * { export * }
+}
