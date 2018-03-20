@@ -12,21 +12,6 @@ PODS:
   - ReactiveSwift (3.1.0):
     - Result (~> 3.2)
   - Result (3.2.4)
-  - SwifterSwift (4.2.0):
-    - SwifterSwift/AppKit (= 4.2.0)
-    - SwifterSwift/CoreGraphics (= 4.2.0)
-    - SwifterSwift/CoreLocation (= 4.2.0)
-    - SwifterSwift/Foundation (= 4.2.0)
-    - SwifterSwift/MapKit (= 4.2.0)
-    - SwifterSwift/SwiftStdlib (= 4.2.0)
-    - SwifterSwift/UIKit (= 4.2.0)
-  - SwifterSwift/AppKit (4.2.0)
-  - SwifterSwift/CoreGraphics (4.2.0)
-  - SwifterSwift/CoreLocation (4.2.0)
-  - SwifterSwift/Foundation (4.2.0)
-  - SwifterSwift/MapKit (4.2.0)
-  - SwifterSwift/SwiftStdlib (4.2.0)
-  - SwifterSwift/UIKit (4.2.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -35,7 +20,6 @@ DEPENDENCIES:
   - HandyJSON (~> 4.0.0-beta.1)
   - Moya
   - ReactiveCocoa
-  - SwifterSwift
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -46,9 +30,8 @@ SPEC CHECKSUMS:
   ReactiveCocoa: 105ad96f6b8711f1ee7d165fc96587479298053b
   ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  SwifterSwift: 1d101dcfb0c3123226900f3b4d220d57fb60d546
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 3ba6ce8d607a09737f8901b1c73acb10809db296
+PODFILE CHECKSUM: 4e5f01006c835c6994d1edac71e687a150248283
 
 COCOAPODS: 1.4.0.beta.2

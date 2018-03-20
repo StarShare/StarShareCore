@@ -8,7 +8,6 @@
 
 import Foundation
 import Moya
-import SwifterSwift
 
 public extension Task {
   

@@ -1,5 +1,5 @@
 //
-//  SignalProducer+Extension.swift
+//  SignalProducerExtension.swift
 //  StarShareCore
 //
 //  Created by BUBUKO on 2018/3/15.

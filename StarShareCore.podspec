@@ -24,6 +24,5 @@ Pod::Spec.new do |s|
   s.dependency "HandyJSON", "~>4.0.0-beta.1"
   s.dependency "ReactiveCocoa"
   s.dependency "Cache"
-  s.dependency "SwifterSwift"
-  s.framework  = "Foundation","UIKit"
+  s.framework = "Foundation"
 end
