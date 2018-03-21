@@ -18,13 +18,31 @@ public protocol DomainBean {
   var method: HTTPMethod { get }
   var task: HTTPTask { get }
   var headers: [String: String]? { get }
+  var publicParameters: [String: String]? { get }
   var check: Check { get }
   var cacheBean: CacheBean? { get }
 }
 
 extension DomainBean {
-  var baseURL: URL {
-    return Config.shared.baseURL ?? URL(string: "https://api.idoool.com")!
+  
+  var path: String {
+    return ""
+  }
+  
+  var method: HTTPMethod {
+    return .get
+  }
+  
+  var task: HTTPTask {
+    return .requestPlain
+  }
+  
+  var headers: [String: String]? {
+    return nil
+  }
+  
+  var publicParameters: [String: String]? {
+    return nil
   }
   
   var check: Check {
@@ -37,6 +55,7 @@ extension DomainBean {
 }
 
 extension DomainBean {
+  
   func asMoyaTarget() -> MoyaTarget {
     return MoyaTarget(self)
   }
@@ -63,7 +82,7 @@ public struct MoyaTarget: TargetType {
   }
   
   public var task: Task {
-    return domainBean.task
+    return domainBean.task.mapping(with: domainBean)
   }
   
   public var validationType: ValidationType {

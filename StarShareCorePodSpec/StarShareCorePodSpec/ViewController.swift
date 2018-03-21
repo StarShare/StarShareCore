@@ -8,19 +8,19 @@
 
 import UIKit
 
+final class StarShareCore: Core {
+  static let shared = StarShareCore()
+}
+
 class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
     StarShareCore.shared.request(V2EX(), to: Node.self).startWithResult { r in
       print(r.value ?? "null")
-      
-      let cacheValue = try! CacheCore.responseCache.fetch(ofType: Node.self, forDomainBean: V2EX())
-      print(cacheValue ?? "null")
     }
- 
+    
     StarShareCore.shared.loadCacheIfNeed(V2EX(), to: Node.self).startWithResult { r in
       print(r.value ?? "null")
     }

@@ -9,6 +9,7 @@
 import Foundation
 
 public enum Check {
+  
   case none
   case successStatus(Int)
   case validData

@@ -8,9 +8,9 @@
 
 import Foundation
 
-final class Config {
-  
-  public static let shared = Config()
+public class Config {
+
+  public static let `default` = Config()
   
   var baseURL: URL?
   var publicParameters: [String:String]?

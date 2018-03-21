@@ -31,7 +31,6 @@
 		31D6E86B20611A9900728C1E /* LogPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E85720611A9900728C1E /* LogPlugin.swift */; };
 		31D6E86C20611A9900728C1E /* PreludePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E85920611A9900728C1E /* PreludePlugin.swift */; };
 		31D6E86D20611A9900728C1E /* ProcessPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E85B20611A9900728C1E /* ProcessPlugin.swift */; };
-		31D6E86E20611A9900728C1E /* StarShareCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E85C20611A9900728C1E /* StarShareCore.swift */; };
 		31D6E87620611AA200728C1E /* V2EXCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E87120611AA200728C1E /* V2EXCache.swift */; };
 		31D6E87720611AA200728C1E /* V2EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E87320611AA200728C1E /* V2EX.swift */; };
 		31D6E87820611AA200728C1E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E87520611AA200728C1E /* Node.swift */; };
@@ -87,7 +86,6 @@
 		31D6E85720611A9900728C1E /* LogPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPlugin.swift; sourceTree = "<group>"; };
 		31D6E85920611A9900728C1E /* PreludePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreludePlugin.swift; sourceTree = "<group>"; };
 		31D6E85B20611A9900728C1E /* ProcessPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessPlugin.swift; sourceTree = "<group>"; };
-		31D6E85C20611A9900728C1E /* StarShareCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarShareCore.swift; sourceTree = "<group>"; };
 		31D6E87120611AA200728C1E /* V2EXCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2EXCache.swift; sourceTree = "<group>"; };
 		31D6E87320611AA200728C1E /* V2EX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2EX.swift; sourceTree = "<group>"; };
 		31D6E87520611AA200728C1E /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				31D6E84A20611A9900728C1E /* Extension */,
 				31D6E84E20611A9900728C1E /* Suppurt */,
 				31D6E85120611A9900728C1E /* Plugins */,
-				31D6E85C20611A9900728C1E /* StarShareCore.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -568,7 +565,6 @@
 				31D6E85E20611A9900728C1E /* TaskEx.swift in Sources */,
 				31D6E87620611AA200728C1E /* V2EXCache.swift in Sources */,
 				31D6E86C20611A9900728C1E /* PreludePlugin.swift in Sources */,
-				31D6E86E20611A9900728C1E /* StarShareCore.swift in Sources */,
 				31D6E86520611A9900728C1E /* MoyaProviderExtension.swift in Sources */,
 				31D6E86B20611A9900728C1E /* LogPlugin.swift in Sources */,
 				31D6E86920611A9900728C1E /* CachePlugin.swift in Sources */,

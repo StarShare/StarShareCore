@@ -36,6 +36,10 @@ final class V2EX: DomainBean {
     return nil
   }
   
+  var publicParameters: [String : String]? {
+    return ["token":"oedfnu4ty0938gh3908u4gn9"]
+  }
+  
   var cacheBean: CacheBean? {
     return V2EXCache()
   }
