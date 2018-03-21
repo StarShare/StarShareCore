@@ -9,35 +9,19 @@
 import Foundation
 import Moya
 
-// MARK: - CoreError
-
 public enum CoreError: Swift.Error {
   
-  /// request Error.
   case moyaError(MoyaError)
-  
-  /// json data transform to Object Model
   case responseSerializer(Response)
-  
-  /// json data status not right
   case validStatus
-  
-  /// json data business error
   case businessError(String?)
-  
-  /// json data not a valid data
   case validDataNil(String)
-  
-  /// json data transform to Object Model
   case jsonModel(String)
-  
-  /// cache data is null
   case noneCache
 }
 
 public extension CoreError {
   
-  /// Depending on error type, returns a `Response` object.
   var response: Moya.Response? {
     switch self {
     case .moyaError(let error): return error.response
@@ -53,7 +37,6 @@ public extension CoreError {
 
 extension CoreError: LocalizedError {
   
-  /// RequestCommonError Error Descriptions
   public var errorDescription: String? {
     switch self {
     case .moyaError(let error):
