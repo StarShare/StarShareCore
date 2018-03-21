@@ -24,7 +24,7 @@ public protocol DomainBean {
 
 extension DomainBean {
   var baseURL: URL {
-    return Config.default.baseURL!
+    return Config.shared.baseURL ?? URL(string: "https://api.idoool.com")!
   }
   
   var check: Check {

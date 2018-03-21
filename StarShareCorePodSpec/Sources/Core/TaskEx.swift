@@ -12,7 +12,7 @@ import Moya
 public extension Task {
   
   public static func publicParameters() -> [String : String] {
-    return Config.default.publicParameters ?? [:]
+    return Config.shared.publicParameters ?? [:]
   }
 }
 
@@ -53,8 +53,8 @@ public extension MoyaProvider {
       url: URL(target: target).absoluteString,
       sampleResponseClosure: { .networkResponse(200, target.sampleData) },
       method: target.method,
-      task: task,
+      task: target.task,
       httpHeaderFields: target.headers
-      )
+      ).replacing(task: task)
   }
 }

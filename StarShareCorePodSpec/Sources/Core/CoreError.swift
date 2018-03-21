@@ -32,7 +32,7 @@ public enum CoreError: Swift.Error {
   case jsonModel(String)
   
   /// cache data is null
-  case nullCache
+  case noneCache
 }
 
 public extension CoreError {
@@ -46,7 +46,7 @@ public extension CoreError {
     case .validDataNil: return nil
     case .jsonModel: return nil
     case .responseSerializer(let response): return response
-    case .nullCache: return nil
+    case .noneCache: return nil
     }
   }
 }
@@ -68,7 +68,7 @@ extension CoreError: LocalizedError {
       return description
     case .responseSerializer:
       return "response serializer failed."
-    case .nullCache:
+    case .noneCache:
       return "not load cache."
     }
   }

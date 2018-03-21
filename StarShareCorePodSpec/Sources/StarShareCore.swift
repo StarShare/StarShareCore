@@ -15,8 +15,12 @@ import HandyJSON
 
 public struct StarShareCore {
   public typealias Error = CoreError
-  static let `default` = StarShareCore()
-  static let `config`  = Config.default
+  public static let shared = StarShareCore()
+  var config: Config
+  
+  init() {
+    config = Config()
+  }
 }
 
 extension StarShareCore: Core {
@@ -44,7 +48,7 @@ extension StarShareCore: Core {
         observer.send(value: cache!)
         observer.sendCompleted()
       } else {
-        observer.send(error: .nullCache)
+        observer.send(error: .noneCache)
       }
     })
   }
