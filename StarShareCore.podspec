@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     'SWIFT_VERSION' => '4.0'
   }
+  s.requires_arc = true
   s.dependency "Alamofire"
   s.dependency "Moya"
   s.dependency "SwiftyJSON"
