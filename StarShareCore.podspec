@@ -3,9 +3,8 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "Network abstraction layer written in Swift with Moya"
   s.description  = <<-EOS
-  StarShareCore abstracts network commands using Swift Generics to provide developers
-  with more compile-time confidence.
-  ReactiveSwift extensions exist as well. Instructions for installation
+  Something.............................................................
+  ..........................Fuck!Nothing!. Instructions for installation
   are in [the README](http://git.idoool.com/iOS_modul/StarShareCore).
   EOS
   s.homepage     = "http://git.idoool.com/iOS_modul/StarShareCore"

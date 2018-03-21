@@ -11,4 +11,4 @@ pod lib lint --allow-warnings
 pod spec lint --allow-warnings
 
 #发布私有库 
-pod repo push StarShareCore StarShareCore.podspec --verbose  --use-libraries --allow-warnings
+pod repo push StarShareCore StarShareCore.podspec --sources='http://git.idoool.com/iOS_modul/StarShareCore.git,https://github.com/CocoaPods/Specs.git' --allow-warnings
