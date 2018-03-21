@@ -32,7 +32,7 @@ extension StarShareCore: Core {
       .reactive
       .request(domainBean.asMoyaTarget())
       .verification(domainBean.check)
-      .map(to: type, forKeyPath: "")
+      .map(to: type, forKeyPath: "data")
   }
   
   public func loadCacheIfNeed<T>(_ domainBean: DomainBean,
