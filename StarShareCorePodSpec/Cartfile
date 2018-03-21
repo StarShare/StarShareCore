@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire"
+github "Moya/Moya"
+github "SwiftyJSON/SwiftyJSON"
+github "alibaba/HandyJSON" ~> 4.0.0-beta.1
+github "ReactiveCocoa/ReactiveCocoa"
+github "hyperoslo/Cache"
