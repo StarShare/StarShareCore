@@ -7,44 +7,36 @@
 //
 
 import Foundation
-import ReactiveSwift
+import RxSwift
 import Moya
 import SwiftyJSON
 import HandyJSON
 
-extension MoyaProvider: ReactiveExtensionsProvider {}
+extension MoyaProvider: ReactiveCompatible {}
 
 public extension Reactive where Base: MoyaProviderType {
   
-  public func request(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) -> SignalProducer<JSON, CoreError> {
-    return base.reactiveRequest(token, callbackQueue: callbackQueue)
-  }
-}
-
-internal extension MoyaProviderType {
-  
-  internal func reactiveRequest(_ token: Target, callbackQueue: DispatchQueue?) -> SignalProducer<JSON, CoreError> {
-    return SignalProducer {  observer, lifetime in
-      let cancellableToken = self.request(token, callbackQueue: callbackQueue, progress: nil) { result in
+  public func request(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) -> Observable<JSON> {
+    return Observable.create({ observer -> Disposable in
+      let cancellableToken = self.base.request(token, callbackQueue: callbackQueue, progress: nil) { result in
         switch result {
         case let .success(response):
           let json = JSON(response.data)
           guard json.type != .null && json.type != .unknown else {
-            observer.send(error: .responseSerializer(response))
+            observer.onError(CoreError.responseSerializer(response))
             return
           }
-          observer.send(value: json)
-          observer.sendCompleted()
+          observer.onNext(json)
+          observer.onCompleted()
         case let .failure(error):
-          observer.send(error: .moyaError(error))
+          observer.onError(CoreError.moyaError(error))
         }
       }
       
-      lifetime.observeEnded {
+      return Disposables.create {
         cancellableToken.cancel()
       }
-    }
+    })
   }
 }
-
 

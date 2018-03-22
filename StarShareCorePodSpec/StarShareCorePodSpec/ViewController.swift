@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class StarShareCore: Core {
   static let shared = StarShareCore()
@@ -17,12 +18,12 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    StarShareCore.shared.request(V2EX(), to: Node.self).startWithResult { r in
-      print(r.value ?? "null")
+    _ = StarShareCore.shared.request(V2EX(), to: Node.self).subscribe { e in
+      print(e.element ?? "request error")
     }
     
-    StarShareCore.shared.loadCacheIfNeed(V2EX(), to: Node.self).startWithResult { r in
-      print(r.value ?? "null")
+    _ = StarShareCore.shared.loadCacheIfNeed(V2EX(), to: Node.self).subscribe { e in
+      print(e.element ?? "load cache error")
     }
   }
 }

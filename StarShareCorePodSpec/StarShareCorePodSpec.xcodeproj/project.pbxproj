@@ -23,7 +23,7 @@
 		31D6E86320611A9900728C1E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E84820611A9900728C1E /* Core.swift */; };
 		31D6E86420611A9900728C1E /* CacheBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E84920611A9900728C1E /* CacheBean.swift */; };
 		31D6E86520611A9900728C1E /* MoyaProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E84B20611A9900728C1E /* MoyaProviderExtension.swift */; };
-		31D6E86620611A9900728C1E /* SignalProducerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E84C20611A9900728C1E /* SignalProducerExtension.swift */; };
+		31D6E86620611A9900728C1E /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E84C20611A9900728C1E /* ObservableExtension.swift */; };
 		31D6E86720611A9900728C1E /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E84D20611A9900728C1E /* DictionaryExtension.swift */; };
 		31D6E86820611A9900728C1E /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E85020611A9900728C1E /* Enum.swift */; };
 		31D6E86920611A9900728C1E /* CachePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6E85320611A9900728C1E /* CachePlugin.swift */; };
@@ -78,7 +78,7 @@
 		31D6E84820611A9900728C1E /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		31D6E84920611A9900728C1E /* CacheBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheBean.swift; sourceTree = "<group>"; };
 		31D6E84B20611A9900728C1E /* MoyaProviderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaProviderExtension.swift; sourceTree = "<group>"; };
-		31D6E84C20611A9900728C1E /* SignalProducerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerExtension.swift; sourceTree = "<group>"; };
+		31D6E84C20611A9900728C1E /* ObservableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableExtension.swift; sourceTree = "<group>"; };
 		31D6E84D20611A9900728C1E /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		31D6E85020611A9900728C1E /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		31D6E85320611A9900728C1E /* CachePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachePlugin.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				31D6E84B20611A9900728C1E /* MoyaProviderExtension.swift */,
-				31D6E84C20611A9900728C1E /* SignalProducerExtension.swift */,
+				31D6E84C20611A9900728C1E /* ObservableExtension.swift */,
 				31D6E84D20611A9900728C1E /* DictionaryExtension.swift */,
 			);
 			path = Extension;
@@ -507,9 +507,8 @@
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -518,9 +517,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,7 +569,7 @@
 				31D6E86A20611A9900728C1E /* PreparePlugin.swift in Sources */,
 				31D6E86420611A9900728C1E /* CacheBean.swift in Sources */,
 				31D6E86020611A9900728C1E /* Config.swift in Sources */,
-				31D6E86620611A9900728C1E /* SignalProducerExtension.swift in Sources */,
+				31D6E86620611A9900728C1E /* ObservableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

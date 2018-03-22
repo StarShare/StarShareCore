@@ -9,8 +9,7 @@
 import Foundation
 import Alamofire
 import Moya
-import ReactiveSwift
-import ReactiveCocoa
+import RxSwift
 import HandyJSON
 
 public typealias HTTPMethod  = Moya.Method
@@ -23,10 +22,10 @@ public protocol Core {
   func configuration() -> Config
   
   func request<T>(_ domainBean: DomainBean,
-                  to type: T.Type) -> SignalProducer<T, Error> where T: HandyJSON
+                  to type: T.Type) -> Observable<T> where T: HandyJSON
   
   func loadCacheIfNeed<T>(_ domainBean: DomainBean,
-                          to type: T.Type) -> SignalProducer<T, Error> where T: HandyJSON
+                          to type: T.Type) -> Observable<T> where T: HandyJSON
 }
 
 extension Core {
@@ -38,29 +37,32 @@ extension Core {
   }
   
   public func request<T>(_ domainBean: DomainBean,
-                         to type: T.Type) -> SignalProducer<T, Error> where T: HandyJSON {
+                         to type: T.Type) -> Observable<T> where T: HandyJSON {
+    
     return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin(),
                                               PreparePlugin(),
                                               LogPlugin(),
                                               CachePlugin(domainBean),
                                               ProcessPlugin()])
-      .reactive
+      .rx
       .request(domainBean.asMoyaTarget())
       .verification(domainBean.check)
       .map(to: type, forKeyPath: "data")
   }
   
   public func loadCacheIfNeed<T>(_ domainBean: DomainBean,
-                                 to type: T.Type) -> SignalProducer<T, Error> where T: HandyJSON {
+                                 to type: T.Type) -> Observable<T> where T: HandyJSON {
     
-    return SignalProducer.init({ (observer,lifetime) in
+    return Observable.create({ observer -> Disposable in
       let cache = try? CacheCore.responseCache.fetch(ofType: type, forDomainBean: domainBean)
       if let cache = cache {
-        observer.send(value: cache!)
-        observer.sendCompleted()
+        observer.onNext(cache!)
+        observer.onCompleted()
       } else {
-        observer.send(error: .noneCache)
+        observer.onError(CoreError.noneCache)
       }
+      
+      return Disposables.create()
     })
   }
 }

@@ -6,6 +6,6 @@ target 'StarShareCorePodSpec' do
   pod 'Moya'
   pod 'SwiftyJSON'
   pod 'HandyJSON', '~>4.0.0-beta.1'
-  pod 'ReactiveCocoa'
+  pod 'RxSwift'
   pod 'Cache'
 end
