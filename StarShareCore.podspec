@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "StarShareCore"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "Network abstraction layer written in Swift with Moya"
   s.description  = <<-EOS
   Something.............................................................
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.dependency "Moya"
   s.dependency "SwiftyJSON"
   s.dependency "HandyJSON", "~>4.0.0-beta.1"
-  s.dependency "ReactiveCocoa"
+  s.dependency "RxSwift"
   s.dependency "Cache"
   s.framework = "Foundation"
 end
