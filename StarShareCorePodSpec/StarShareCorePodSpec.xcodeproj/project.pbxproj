@@ -205,13 +205,13 @@
 		31D6E84220611A9900728C1E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				31D6E84320611A9900728C1E /* TaskEx.swift */,
-				31D6E84420611A9900728C1E /* CoreError.swift */,
-				31D6E84520611A9900728C1E /* Config.swift */,
-				31D6E84620611A9900728C1E /* DomainBean.swift */,
-				31D6E84720611A9900728C1E /* Check.swift */,
-				31D6E84820611A9900728C1E /* Core.swift */,
 				31D6E84920611A9900728C1E /* CacheBean.swift */,
+				31D6E84720611A9900728C1E /* Check.swift */,
+				31D6E84520611A9900728C1E /* Config.swift */,
+				31D6E84820611A9900728C1E /* Core.swift */,
+				31D6E84420611A9900728C1E /* CoreError.swift */,
+				31D6E84620611A9900728C1E /* DomainBean.swift */,
+				31D6E84320611A9900728C1E /* TaskEx.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";

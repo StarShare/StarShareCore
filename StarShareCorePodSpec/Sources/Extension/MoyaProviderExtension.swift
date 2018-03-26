@@ -38,5 +38,39 @@ public extension Reactive where Base: MoyaProviderType {
       }
     })
   }
+  
+  public func progressRequest(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) -> Observable<ProgressResponse> {
+    let progressBlock: (AnyObserver<ProgressResponse>) -> (ProgressResponse) -> Void = { observer in
+      return { progress in
+        observer.onNext(progress)
+      }
+    }
+    
+    let response: Observable<ProgressResponse> = Observable.create({ observer -> Disposable in
+      let cancellableToken = self.base.request(token, callbackQueue: callbackQueue, progress: progressBlock(observer), completion: { result in
+        switch result {
+        case let .success(response):
+          let json = JSON(response.data)
+          guard json.type != .null && json.type != .unknown else {
+            observer.onError(CoreError.responseSerializer(response))
+            return
+          }
+          observer.onCompleted()
+        case let .failure(error):
+          observer.onError(CoreError.moyaError(error))
+        }
+      })
+      
+      return Disposables.create {
+        cancellableToken.cancel()
+      }
+    })
+    
+    return response.scan(ProgressResponse()) { last, progress in
+      let progressObject = progress.progressObject ?? last.progressObject
+      let response = progress.response ?? last.response
+      return ProgressResponse(progress: progressObject, response: response)
+      }
+  }
 }
 
