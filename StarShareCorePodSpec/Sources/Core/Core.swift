@@ -18,8 +18,6 @@ public typealias HTTPTask    = Moya.Task
 
 public protocol Core {
   
-  associatedtype Error: Swift.Error
-  
   /// 网络引擎的一些简单的配置，包含根域名，公共参数等
   ///
   /// - Returns: 配置(Config).
@@ -31,7 +29,6 @@ public protocol Core {
   ///   - domainBean: 网络请求的一些参数封装
   ///   - type: 数据模型类型
   /// - Returns: Observable with RxSwift
-  @discardableResult
   func loadCacheIfNeed<T>(_ domainBean: DomainBean,
                           to type: T.Type) -> Observable<T> where T: HandyJSON
   
@@ -41,7 +38,6 @@ public protocol Core {
   ///   - domainBean: 网络请求的一些参数封装
   ///   - type: 数据模型类型
   /// - Returns: Observable with RxSwift
-  @discardableResult
   func request<T>(_ domainBean: DomainBean,
                   to type: T.Type) -> Observable<T> where T: HandyJSON
   
@@ -49,26 +45,21 @@ public protocol Core {
   ///
   /// - Parameter domainBean: 网络请求的一些参数封装
   /// - Returns: Observable with RxSwift
-  @discardableResult
   func upload(_ domainBean: DomainBean) -> Observable<ProgressResponse>
   
   /// 创建一个下载文件的网络请求，底层使用 ‘Alamofire’ 、‘RxSwift’
   ///
   /// - Parameter domainBean: 网络请求的一些参数封装
   /// - Returns: Observable with RxSwift
-  @discardableResult
   func download(_ domainBean: DomainBean) -> Observable<ProgressResponse>
 }
 
 extension Core {
   
-  typealias Error = CoreError
-  
   public func configuration() -> Config {
     return Config.default
   }
   
-  @discardableResult
   public func loadCacheIfNeed<T>(_ domainBean: DomainBean,
                                  to type: T.Type) -> Observable<T> where T: HandyJSON {
     
@@ -85,7 +76,6 @@ extension Core {
     })
   }
   
-  @discardableResult
   public func request<T>(_ domainBean: DomainBean,
                          to type: T.Type) -> Observable<T> where T: HandyJSON {
     
@@ -100,7 +90,6 @@ extension Core {
       .map(to: type, forKeyPath: "data")
   }
   
-  @discardableResult
   func upload(_ domainBean: DomainBean) -> Observable<ProgressResponse> {
     
     return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin(),
@@ -111,7 +100,6 @@ extension Core {
       .progressRequest(domainBean.asMoyaTarget())
   }
   
-  @discardableResult
   func download(_ domainBean: DomainBean) -> Observable<ProgressResponse> {
     
     return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin(),
