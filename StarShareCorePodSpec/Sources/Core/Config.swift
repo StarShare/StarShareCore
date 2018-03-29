@@ -12,6 +12,6 @@ public class Config {
 
   public static let `default` = Config()
   
-  var baseURL: URL?
-  var publicParameters: [String:String]?
+  public var baseURL: URL?
+  public var publicParameters: [String:String]?
 }

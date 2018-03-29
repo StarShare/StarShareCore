@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "StarShareCore"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Network abstraction layer written in Swift with Moya"
   s.description  = <<-EOS
   Something.............................................................
