@@ -56,11 +56,11 @@ public protocol Core {
 
 public extension Core {
   
-  public func configuration() -> Config {
+  func configuration() -> Config {
     return Config.default
   }
   
-  public func loadCacheIfNeed<T>(_ domainBean: DomainBean,
+  func loadCacheIfNeed<T>(_ domainBean: DomainBean,
                                  to type: T.Type) -> Observable<T> where T: HandyJSON {
     
     return Observable.create({ observer -> Disposable in
@@ -76,7 +76,7 @@ public extension Core {
     })
   }
   
-  public func request<T>(_ domainBean: DomainBean,
+  func request<T>(_ domainBean: DomainBean,
                          to type: T.Type) -> Observable<T> where T: HandyJSON {
     
     return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin(),
