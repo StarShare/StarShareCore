@@ -14,7 +14,7 @@ public protocol CacheBean {
   var key: String { get }
 }
 
-extension CacheBean {
+public extension CacheBean {
   
   var enable: Bool {
     return false

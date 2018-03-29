@@ -54,7 +54,7 @@ public protocol Core {
   func download(_ domainBean: DomainBean) -> Observable<ProgressResponse>
 }
 
-extension Core {
+public extension Core {
   
   public func configuration() -> Config {
     return Config.default

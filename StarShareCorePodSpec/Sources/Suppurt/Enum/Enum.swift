@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Enum {
+public protocol Enum {
   func description() -> String!
 }

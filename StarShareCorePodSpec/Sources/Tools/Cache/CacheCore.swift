@@ -23,7 +23,7 @@ public protocol CacheAware {
   func fetch<T: HandyJSON>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T?
 }
 
-final class CacheCore: CacheAware {
+public class CacheCore: CacheAware {
   
   static let responseCache = CacheCore(responseCacheCore)
   fileprivate static let responseCacheCore = try! Storage(
@@ -47,16 +47,16 @@ final class CacheCore: CacheAware {
     currentStorage = storage
   }
   
-  func save<T: Codable>(_ object: T,forKey key: String) throws {
+  public func save<T: Codable>(_ object: T,forKey key: String) throws {
     try self.currentStorage.setObject(object, forKey: key)
   }
   
-  func save<T: HandyJSON>(_ object: T,forKey key: String) throws {
+  public func save<T: HandyJSON>(_ object: T,forKey key: String) throws {
     let object = object.toJSONString()
     try self.save(object, forKey: key)
   }
   
-  func save<T: Codable>(_ object: T,forDomainBean bean: DomainBean) throws {
+  public func save<T: Codable>(_ object: T,forDomainBean bean: DomainBean) throws {
     if let cacheBean = bean.cacheBean {
       if cacheBean.enable == true {
         let key = cacheBean.key
@@ -68,7 +68,7 @@ final class CacheCore: CacheAware {
     }
   }
   
-  func save<T: HandyJSON>(_ object: T,forDomainBean bean: DomainBean) throws {
+  public func save<T: HandyJSON>(_ object: T,forDomainBean bean: DomainBean) throws {
     if let cacheBean = bean.cacheBean {
       if cacheBean.enable == true {
         let key = cacheBean.key
@@ -80,16 +80,16 @@ final class CacheCore: CacheAware {
     }
   }
   
-  func fetch<T: Codable>(ofType type: T.Type, forKey key: String) throws -> T? {
+  public func fetch<T: Codable>(ofType type: T.Type, forKey key: String) throws -> T? {
     return try self.currentStorage.entry(ofType: type, forKey: key).object
   }
   
-  func fetch<T: HandyJSON>(ofType type: T.Type, forKey key: String) throws -> T? {
+  public func fetch<T: HandyJSON>(ofType type: T.Type, forKey key: String) throws -> T? {
     let object = try self.fetch(ofType: String.self, forKey: key)
     return type.deserialize(from: object)
   }
   
-  func fetch<T: Codable>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T? {
+  public func fetch<T: Codable>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T? {
     if let cacheBean = bean.cacheBean {
       if cacheBean.enable == true {
         let key = cacheBean.key
@@ -103,7 +103,7 @@ final class CacheCore: CacheAware {
     return nil
   }
   
-  func fetch<T: HandyJSON>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T? {
+  public func fetch<T: HandyJSON>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T? {
     let object = try self.fetch(ofType: String.self, forDomainBean: bean)
     return type.deserialize(from: object)
   }

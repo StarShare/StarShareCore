@@ -23,7 +23,7 @@ public protocol DomainBean {
   var cacheBean: CacheBean? { get }
 }
 
-extension DomainBean {
+public extension DomainBean {
   
   var path: String {
     return ""
@@ -54,7 +54,7 @@ extension DomainBean {
   }
 }
 
-extension DomainBean {
+public extension DomainBean {
   
   func asMoyaTarget() -> MoyaTarget {
     return MoyaTarget(self)

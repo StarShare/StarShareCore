@@ -13,7 +13,7 @@ import Moya
 import SwiftyJSON
 import HandyJSON
 
-extension ObservableType where E == JSON {
+public extension ObservableType where E == JSON {
   
   public func map<T>(to type: T.Type, forKeyPath: String?) -> Observable<T> where T: HandyJSON {
 
